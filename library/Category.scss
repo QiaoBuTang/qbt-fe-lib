@@ -1,0 +1,26 @@
+.ant-select-tree {
+  .treeSelect-category__li {
+    position: relative;
+    & > span.ant-select-tree-switcher {
+      width: 100%;
+      left: 0;
+      z-index: 2;
+      &.ant-select-tree-noline_close:after, &.ant-select-tree-noline_open:after {
+        left: 0;
+        right: initial;
+      }
+    }
+    & > .ant-select-tree-node-content-wrapper {
+      position: absolute;
+      left: 15px;
+    }
+    a:hover {
+      background: none;
+    }
+  }
+  .treeSelect-category__leaf {
+    .ant-select-tree-node-content-wrapper:hover {
+      background: none;
+    }
+  }
+}

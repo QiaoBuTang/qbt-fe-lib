@@ -1,0 +1,9 @@
+.searchSelect-option__info {
+  font-size: 12px;
+  color: #cfcfcf;
+}
+.ant-select-selection__choice {
+  .searchSelect-option__info {
+    display: none;
+  }
+}
