@@ -1,5 +1,5 @@
 import {Region} from './library/SearchSelect';
 
-module.exports = {
+export {
   Region
 };
