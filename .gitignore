@@ -30,6 +30,7 @@ node_modules
 dist
 
 #Webstorm metadata
+.idea
 
 # Mac files
 .DS_Store
