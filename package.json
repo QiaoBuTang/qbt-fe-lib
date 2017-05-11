@@ -1,6 +1,6 @@
 {
   "name": "qbt-fe-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "license": "MIT",
   "main": "./build/library.js",
@@ -58,9 +58,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "react": "^15.5.0",
-    "react-dom": "^15.5.0",
-    "react-redux": "^4.4.0",
-    "react-router": "^3.0.0"
+    "react-dom": "^15.5.0"
   },
   "repository": {
     "type": "git",

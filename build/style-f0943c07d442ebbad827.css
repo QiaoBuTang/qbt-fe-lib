@@ -1,0 +1,25 @@
+.searchSelect-option__info {
+  font-size: 12px;
+  color: #cfcfcf; }
+
+.ant-select-selection__choice .searchSelect-option__info {
+  display: none; }
+.cascaderUniversity-wrapper .ant-select-selection .ant-select-selection__rendered {
+  padding-right: 15px; }
+.ant-select-tree .treeSelect-category__li {
+  position: relative; }
+  .ant-select-tree .treeSelect-category__li > span.ant-select-tree-switcher {
+    width: 100%;
+    left: 0;
+    z-index: 2; }
+    .ant-select-tree .treeSelect-category__li > span.ant-select-tree-switcher.ant-select-tree-noline_close:after, .ant-select-tree .treeSelect-category__li > span.ant-select-tree-switcher.ant-select-tree-noline_open:after {
+      left: 0;
+      right: initial; }
+  .ant-select-tree .treeSelect-category__li > .ant-select-tree-node-content-wrapper {
+    position: absolute;
+    left: 15px; }
+  .ant-select-tree .treeSelect-category__li a:hover {
+    background: none; }
+
+.ant-select-tree .treeSelect-category__leaf .ant-select-tree-node-content-wrapper:hover {
+  background: none; }
