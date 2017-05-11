@@ -2,7 +2,7 @@ import React, {PropTypes, Component} from 'react';
 import {Select} from 'antd';
 import qs from 'qs';
 import fetch from 'isomorphic-fetch';
-import {UP_API_SERVER} from '../../../config.json';
+import {UP_API_SERVER} from '../config.json';
 import debounce from 'lodash/debounce';
 const Option = Select.Option;
 

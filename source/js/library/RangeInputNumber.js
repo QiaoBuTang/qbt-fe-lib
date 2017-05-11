@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import {InputNumber, Icon} from 'antd';
 import {isNumber} from 'lodash';
-import {RANGE_SPLIT} from '../../helpers/const';
+import {RANGE_SPLIT} from '../helpers/const';
 
 export default class RangeInputNumber extends Component {
   state = {

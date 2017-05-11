@@ -1,6 +1,6 @@
 import React, {PropTypes, Component} from 'react';
 import BasicSearchSelect from './BasicSearchSelect';
-import {UP_API_SERVER, CV_SERVER} from '../../../config.json';
+import {UP_API_SERVER} from '../config.json';
 
 export class Region extends Component {
   render() {
@@ -8,7 +8,7 @@ export class Region extends Component {
     let valueArr = this.props.values ? this.props.values.map(val => {
       return val.value;
     }) : [];
-    //这里的keyProp字段，是当地区组件用在弹窗中，每次弹窗出来，有不同的key，那地区组件就会重渲染，不会遗留上次的数据
+    //这里的keyProp字段，是当组件用在弹窗中，每次弹窗出来，有不同的key，那组件就会重渲染，不会遗留上次的数据
     return (
       <BasicSearchSelect disabled={this.props.disabled} formModal={this.props.formModal} key={this.props.keyProp || ''}
                          value={valueArr} values={this.props.values} multiple={this.props.multiple}
@@ -24,7 +24,7 @@ export class University extends Component {
     let valueArr = this.props.values ? this.props.values.map(val => {
       return val.value;
     }) : [];
-    //这里的keyProp字段，是当地区组件用在弹窗中，每次弹窗出来，有不同的key，那地区组件就会重渲染，不会遗留上次的数据
+    //这里的keyProp字段，是当组件用在弹窗中，每次弹窗出来，有不同的key，那组件就会重渲染，不会遗留上次的数据
     return (
       <BasicSearchSelect disabled={this.props.disabled} formModal={this.props.formModal} key={this.props.keyProp || ''}
                          value={valueArr} values={this.props.values} multiple={this.props.multiple}
@@ -36,21 +36,21 @@ export class University extends Component {
   }
 }
 
-export class Major extends Component {
-  render() {
-    //因为后端数据结构是label,value一起的形式，所以这里的值就把value单独抽出来
-    let valueArr = this.props.values ? this.props.values.map(val => {
-      return val.value;
-    }) : [];
-    //这里的keyProp字段，是当地区组件用在弹窗中，每次弹窗出来，有不同的key，那地区组件就会重渲染，不会遗留上次的数据
-    return (
-      <BasicSearchSelect disabled={this.props.disabled} formModal={this.props.formModal} key={this.props.keyProp || ''}
-                         value={valueArr} values={this.props.values} multiple={this.props.multiple}
-                         leaf_only={this.props.major_leaf_only} onChange={this.props.onChange}
-                         api={`${UP_API_SERVER}/open/majors/search.json`} placeholder="请输入专业进行搜索"/>
-    );
-  }
-}
+// export class Major extends Component {
+//   render() {
+//     //因为后端数据结构是label,value一起的形式，所以这里的值就把value单独抽出来
+//     let valueArr = this.props.values ? this.props.values.map(val => {
+//       return val.value;
+//     }) : [];
+//     //这里的keyProp字段，是当组件用在弹窗中，每次弹窗出来，有不同的key，那组件就会重渲染，不会遗留上次的数据
+//     return (
+//       <BasicSearchSelect disabled={this.props.disabled} formModal={this.props.formModal} key={this.props.keyProp || ''}
+//                          value={valueArr} values={this.props.values} multiple={this.props.multiple}
+//                          leaf_only={this.props.major_leaf_only} onChange={this.props.onChange}
+//                          api={`${UP_API_SERVER}/open/majors/search.json`} placeholder="请输入专业进行搜索"/>
+//     );
+//   }
+// }
 
 
 Region.propTypes = {
@@ -79,16 +79,16 @@ University.propTypes = {
     PropTypes.array
   ])
 };
-Major.propTypes = {
-  onChange: PropTypes.func,
-  multiple: PropTypes.bool,
-  disabled: PropTypes.bool,
-  major_leaf_only: PropTypes.bool,
-  keyProp: PropTypes.string,
-  formModal: PropTypes.bool,
-  values: PropTypes.array,
-  name: React.PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array
-  ])
-};
+// Major.propTypes = {
+//   onChange: PropTypes.func,
+//   multiple: PropTypes.bool,
+//   disabled: PropTypes.bool,
+//   major_leaf_only: PropTypes.bool,
+//   keyProp: PropTypes.string,
+//   formModal: PropTypes.bool,
+//   values: PropTypes.array,
+//   name: React.PropTypes.oneOfType([
+//     PropTypes.string,
+//     PropTypes.array
+//   ])
+// };

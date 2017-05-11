@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import {Select, TreeSelect} from 'antd';
 import fetch from 'isomorphic-fetch';
-import {UP_API_SERVER} from '../../../config.json';
+import {UP_API_SERVER} from '../config.json';
 import {University} from './SearchSelect';
 import './CascaderUniversity.scss';
 
@@ -61,7 +61,6 @@ export default class CascaderUniversity extends Component {
     } else {
       return [];
     }
-
   };
 
   onChange = (region, category, universities = []) => {

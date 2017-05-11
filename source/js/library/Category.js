@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import {TreeSelect} from 'antd';
 import fetch from 'isomorphic-fetch';
-import {UP_API_SERVER} from '../../../config.json';
+import {UP_API_SERVER} from '../config.json';
 import './Category.scss';
 
 const TreeNode = TreeSelect.TreeNode;
@@ -49,7 +49,8 @@ export default class Category extends Component {
       treeCheckable: true,
       showSearch: true,
       treeNodeFilterProp: "label",
-      searchPlaceholder: '请选择职类, 输入可搜索'
+      searchPlaceholder: '请选择职类, 输入可搜索',
+      dropdownStyle: { maxHeight: 300, overflow: 'auto' }
     };
     if (this.props.values && this.props.values.length !== 0) {
       tProps['value'] = this.props.values.map(v => {

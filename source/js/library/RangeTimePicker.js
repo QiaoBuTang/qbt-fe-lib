@@ -1,9 +1,9 @@
 import React, {PropTypes, Component} from 'react';
-import {DatePicker, Icon} from 'antd';
+import {TimePicker, Icon} from 'antd';
 import moment from 'moment';
-import {RANGE_SPLIT} from '../../helpers/const';
+import {RANGE_SPLIT} from '../helpers/const';
 
-export default class RangeDatePicker extends Component {
+export default class RangeTimePicker extends Component {
   constructor(v) {
     super(v);
 
@@ -16,22 +16,6 @@ export default class RangeDatePicker extends Component {
       endValue: endDefaultValue ? moment(Number(endDefaultValue)): undefined
     };
   }
-
-  disabledStartDate = (startValue) => {
-    const endValue = this.state.endValue;
-    if (!startValue || !endValue) {
-      return false;
-    }
-    return startValue.valueOf() > endValue.valueOf();
-  };
-
-  disabledEndDate = (endValue) => {
-    const startValue = this.state.startValue;
-    if (!endValue || !startValue) {
-      return false;
-    }
-    return endValue.valueOf() <= startValue.valueOf();
-  };
 
   onChange = (field, value) => {
     this.setState({
@@ -66,18 +50,16 @@ export default class RangeDatePicker extends Component {
 
     return (
       <div>
-        <DatePicker
+        <TimePicker
           style={{width: "40%"}}
-          disabledDate={this.disabledStartDate}
           defaultValue={startValue}
           placeholder={this.props.hint.split(RANGE_SPLIT)[0]}
           onChange={this.onStartChange}
           disabled={this.props.disabled}
         />
         <Icon type="minus" style={{padding: "0 3%"}}/>
-        <DatePicker
+        <TimePicker
           style={{width: "40%"}}
-          disabledDate={this.disabledEndDate}
           defaultValue={endValue}
           placeholder={this.props.hint.split(RANGE_SPLIT)[1]}
           onChange={this.onEndChange}
@@ -88,7 +70,7 @@ export default class RangeDatePicker extends Component {
   }
 }
 
-RangeDatePicker.propTypes = {
+RangeTimePicker.propTypes = {
   onChange: PropTypes.func,
   values: PropTypes.array,
   disabled: PropTypes.bool,

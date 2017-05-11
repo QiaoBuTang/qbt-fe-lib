@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import {Select, Icon} from 'antd';
 import moment from 'moment';
-import {RANGE_SPLIT} from '../../helpers/const';
+import {RANGE_SPLIT} from '../helpers/const';
 
 export default class RangeMonthPicker extends Component {
   constructor(v) {

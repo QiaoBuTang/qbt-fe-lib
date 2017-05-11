@@ -1,9 +1,11 @@
 import React, {PropTypes, Component} from 'react';
-import {TimePicker, Icon} from 'antd';
+import {DatePicker, Icon} from 'antd';
 import moment from 'moment';
-import {RANGE_SPLIT} from '../../helpers/const';
+import {RANGE_SPLIT} from '../helpers/const';
 
-export default class RangeTimePicker extends Component {
+const { MonthPicker } = DatePicker;
+
+export default class RangeMonthPicker extends Component {
   constructor(v) {
     super(v);
 
@@ -16,6 +18,22 @@ export default class RangeTimePicker extends Component {
       endValue: endDefaultValue ? moment(Number(endDefaultValue)): undefined
     };
   }
+
+  disabledStartDate = (startValue) => {
+    const endValue = this.state.endValue;
+    if (!startValue || !endValue) {
+      return false;
+    }
+    return startValue.valueOf() > endValue.valueOf();
+  };
+
+  disabledEndDate = (endValue) => {
+    const startValue = this.state.startValue;
+    if (!endValue || !startValue) {
+      return false;
+    }
+    return endValue.valueOf() <= startValue.valueOf();
+  };
 
   onChange = (field, value) => {
     this.setState({
@@ -50,16 +68,18 @@ export default class RangeTimePicker extends Component {
 
     return (
       <div>
-        <TimePicker
+        <MonthPicker
           style={{width: "40%"}}
+          disabledDate={this.disabledStartDate}
           defaultValue={startValue}
           placeholder={this.props.hint.split(RANGE_SPLIT)[0]}
           onChange={this.onStartChange}
           disabled={this.props.disabled}
         />
         <Icon type="minus" style={{padding: "0 3%"}}/>
-        <TimePicker
+        <MonthPicker
           style={{width: "40%"}}
+          disabledDate={this.disabledEndDate}
           defaultValue={endValue}
           placeholder={this.props.hint.split(RANGE_SPLIT)[1]}
           onChange={this.onEndChange}
@@ -70,7 +90,7 @@ export default class RangeTimePicker extends Component {
   }
 }
 
-RangeTimePicker.propTypes = {
+RangeMonthPicker.propTypes = {
   onChange: PropTypes.func,
   values: PropTypes.array,
   disabled: PropTypes.bool,

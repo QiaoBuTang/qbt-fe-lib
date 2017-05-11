@@ -1,11 +1,9 @@
 import React, {PropTypes, Component} from 'react';
 import {DatePicker, Icon} from 'antd';
 import moment from 'moment';
-import {RANGE_SPLIT} from '../../helpers/const';
+import {RANGE_SPLIT} from '../helpers/const';
 
-const { MonthPicker } = DatePicker;
-
-export default class RangeMonthPicker extends Component {
+export default class RangeDatePicker extends Component {
   constructor(v) {
     super(v);
 
@@ -68,7 +66,7 @@ export default class RangeMonthPicker extends Component {
 
     return (
       <div>
-        <MonthPicker
+        <DatePicker
           style={{width: "40%"}}
           disabledDate={this.disabledStartDate}
           defaultValue={startValue}
@@ -77,7 +75,7 @@ export default class RangeMonthPicker extends Component {
           disabled={this.props.disabled}
         />
         <Icon type="minus" style={{padding: "0 3%"}}/>
-        <MonthPicker
+        <DatePicker
           style={{width: "40%"}}
           disabledDate={this.disabledEndDate}
           defaultValue={endValue}
@@ -90,7 +88,7 @@ export default class RangeMonthPicker extends Component {
   }
 }
 
-RangeMonthPicker.propTypes = {
+RangeDatePicker.propTypes = {
   onChange: PropTypes.func,
   values: PropTypes.array,
   disabled: PropTypes.bool,
