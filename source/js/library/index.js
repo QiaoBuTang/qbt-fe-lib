@@ -1,9 +1,20 @@
-// export {Region, University} from './SearchSelect';
-// export CascaderUniversity from './CascaderUniversity';
-// export Category from './Category';
-// export Company from './Company';
-// export Major from './Major';
-// export Certificate from './Certificate';
-// export QbtDatePicker from './QbtDatePicker';
+import {Region, University} from './SearchSelect';
+import CascaderUniversity from './CascaderUniversity';
+import Category from './Category';
+import Company from './Company';
+import Major from './Major';
+import Certificate from './Certificate';
+import QbtDatePicker from './QbtDatePicker';
+import RangeInputNumber from './RangeInputNumber';
 
-export const sb = 'aaaaa';
+export {
+  Region,
+  University,
+  CascaderUniversity,
+  Category,
+  Company,
+  Major,
+  Certificate,
+  QbtDatePicker,
+  RangeInputNumber
+};
